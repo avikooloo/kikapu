@@ -92,6 +92,8 @@ h5{
 }
 .content{
     &_section{
+        position: relative;
+        overflow: hidden;
         &-wrapper{
             position: absolute;
             top: 50%;
@@ -101,7 +103,7 @@ h5{
     }
 }
 .panel{
-    &_home,&_work,&_about{
+    &_home,&_about{
         height: 100vh;
         position: relative;
     }
@@ -136,49 +138,6 @@ h5{
         }
     }
     &_work,&_about{
-        .float_pad{
-            background-color:$color_grey-light;
-            position: absolute;
-            right: 0;
-            width: 40%;
-        }
-    }
-    &_work{
-        .content_section{
-            height: 60%;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            &-wrapper{
-                height: 100%;
-            }
-        }
-        .float_pad{
-            &::before,&::after{
-                position: absolute;
-                content: "";
-                top: 0;
-            }
-            &::after{
-                height: 100%;
-                width: 1px;
-                background-color: $color_grey;
-                right: 11%;
-                z-index:2;
-            }
-        }
-        &:nth-child(1){
-            .float_pad{
-                bottom: 0;
-                height: 50%;
-            }
-        }
-        &:last-child,&:nth-child(2),&:nth-child(3){
-            .float_pad{
-                bottom: 0;
-                height: 100%;
-            }
-        }
     }
     &_about{
         .float_pad{
@@ -186,6 +145,12 @@ h5{
             height: 300px;
         }
     }
+}
+.float_pad{
+    background-color:$color_grey-light;
+    position: absolute;
+    right: 0;
+    width: 40%;
 }
 .scroll{
     &_section{
@@ -277,27 +242,49 @@ h5{
     }
 }
 .work{
-    &_gallery{
+    &_section{
+        padding: 120px 0;
         position: relative;
-        height: 100%;
+        .content_section{
+            z-index: 20;
+        }
+        .float_pad{
+            bottom: 0;
+            height: 50%;
+            &::before,&::after{
+                position: absolute;
+                content: "";
+                top: 0;
+            }
+            &::after{
+                height: 100%;
+                width: 1px;
+                background-color: $color_grey;
+                right: 11%;
+                z-index:2;
+            }
+        }
+        &:last-child,&:nth-child(3),&:nth-child(4){
+            .float_pad{
+                bottom: 0;
+                height: 100%;
+            }
+        }
         &-wrapper{
-            height: 100%;
+            position: relative;
         }
-        &-content{
-            height: 100%;
-            width: 76%;
-            position: absolute;
-            right: 0;
-            opacity: 0;
-            transition: opacity 1s;
-        }
-        &-snippet{
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 28%;
-            z-index: 100;
-        }
+    }
+    &_snippet{
+        position: absolute;
+        top: 60px;
+        left:0;
+        width: 24%;
+    }
+    &_visual{
+        background-color: #f1f1f1;
+        height: 600px;
+        float: right;
+        width: 80%;
     }
 }
 @keyframes scrollbar{
@@ -334,7 +321,7 @@ h5{
   }
 @media screen and (min-width:1024px) {
     .content_section{
-        width:954px;
+        width:70%;
         margin-left: auto;
         margin-right: auto;
     }
