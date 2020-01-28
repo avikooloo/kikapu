@@ -9,467 +9,268 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
-.slider-wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-}
 
-.slider-container {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  transition-property: transform;
-  transition-timing-function: ease-out;
-}
-.slider-container li {
-  display: block;
-  float: left;
-  height: 100%;
+#slider {
+  margin: 50px auto;
+  width: 100%;
+  min-width: 320px;
+  max-width: 960px;
+  height: 500px;
+  background: black;
+  overflow: hidden;
   position: relative;
 }
-.slider-container li.next:first-child {
-  left: 100%;
+.slides-wrapper {
+  height: 100%;
+  z-index: 1;
+  position: relative;
 }
-.slider-container li.prev.last-child {
-  right: 100%;
-}
-.slider-container li.target:first-child, .slider-container li.target.last-child {
-  left: 0;
-  right: 0;
+.slides-wrapper li {
+  position: relative;
+  float: left;
+  height: 100%;
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  img {
+    display: none;
+  }
+  h2 {
+    color: #fff;
+    position: absolute;
+    font-family: "Droid Serif", serif;
+    font-style: italic;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    top: 45%;
+  }
 }
 
-.slide-prev, .slide-next {
-  user-select: none;
-  cursor: pointer;
-}
-.slide-prev.disabled, .slide-next.disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.slider-pager a.active {
+.slide-controls {
+  position: absolute;
+  top: 45%;
+  z-index: 2;
+  font-size: 3em;
   font-weight: bold;
-  color: red;
+  background: #fff;
+  padding: 10px 5px;
+  opacity: 0.3;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
 }
 
-img {
-  max-width: 100%;
+.slide-left {
+  left: 0;
+  border-radius: 0 5px 5px 0;
+}
+.slide-right {
+  right: 0;
+  border-radius: 5px 0 0 5px;
 }
 
-.clearfix, .slider-container {
-  *zoom: 1;
-}
-.clearfix:before, .slider-container:before, .clearfix:after, .slider-container:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after, .slider-container:after {
-  clear: both;
+.info {
+  text-align: center;
+  color: #787878;
+  font-family: "Droid Serif", serif;
+  font-style: italic;
+  font-size: 0.7em;
+  line-height: 1.3;
 }
 
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="slider_wrapper">
-            <section class="panel_home" id="home_section">
+        <section class="panel_home" id="home_section">
+            <div class="content_section">
+                <div class="aviko_logo-wrapper">
+                    <a href="https://avikooloo.github.io/kikapu" class="aviko_logo" ><img src="victor_oloo.svg" alt="Victor Oloo"></a>
+                </div>
+                <h2>Am London based Product Designer. I’ve spent the last ten years turning ideas into meaningful experiences for startups to established</h2>
+            </div>
+            <div class="content_section-wrapper">
+            </div>
+            <div class="scroll_section">
+                <a href="#work_section" class="scroll_bar"><span>SCROLL<br/>DOWN</span></a>
+            </div>
+        </section>
+        <section id="work_section" class="work_section-wrapper panel_work">
+            <a href="#about_section" class="menu_item menu_item-left menu_item-bottom menu_link"><span>About</span></a>
+            <section class="work_section">
                 <div class="content_section">
-                    <div class="aviko_logo-wrapper">
-                        <a href="https://avikooloo.github.io/kikapu" class="aviko_logo" ><img src="victor_oloo.svg" alt="Victor Oloo"></a>
+                    <div class="work_snippet">
+                        <h3>Ogilvy Africa</h3>
+                        <h6>“Making the simple complicated is commonplace; making the complicated simple, awesomely simple, that’s creativity.”</h6>
+                        <h5><span>Client</span>In-House</h5>
+                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
+                        <h5></h5>
+                        <a href="https://ogilvy.africa/" class="work_link" target="_blank">CHECK IT OUT</a>
                     </div>
-                    <h2>Am London based Product Designer. I’ve spent the last ten years turning ideas into meaningful experiences for startups to established</h2>
-                </div>
-                <div class="content_section-wrapper">
-                </div>
-                <div class="scroll_section">
-                    <a href="#work_section" class="scroll_bar"><span>SCROLL<br/>DOWN</span></a>
+                    <div class="work_visual-wrapper">
+                        <a href="https://ogilvy.africa/" class="work_visual" target="_blank"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></a>
+                    </div>
                 </div>
             </section>
-            <section id="work_section" class="work_section-wrapper">
-                <a href="#about_section" class="menu_item menu_item-left menu_item-bottom menu_link"><span>About</span></a>
-                <section class="work_section">
-                    <div class="content_section">
-                        <div class="work_snippet">
-                            <h3>Ogilvy Africa</h3>
-                            <h6>“Making the simple complicated is commonplace; making the complicated simple, awesomely simple, that’s creativity.”</h6>
-                            <h5><span>Client</span>In-House</h5>
-                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
-                            <h5></h5>
-                            <a href="https://ogilvy.africa/" class="work_link" target="_blank">CHECK IT OUT</a>
-                        </div>
-                        <div class="work_visual-wrapper">
-                            <a href="https://ogilvy.africa/" class="work_visual" target="_blank"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></a>
-                        </div>
+            <section class="work_section">
+                <div class="content_section">
+                    <div class="work_snippet">
+                        <h3>Lorem ipsum</h3>
+                        <h6>Building an efficient platform for largest collection of edgy, underground products from independent sellers on the internet.</h6>
+                        <h5><span>Client</span>In-House</h5>
+                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
+                        <a href="#" class="work_link" target="_blank">CHECK IT OUT</a>
                     </div>
-                    <div class="float_pad"></div>
-                </section>
-                <section class="work_section">
-                    <div class="content_section">
-                        <div class="work_snippet">
-                            <h3>Lorem ipsum</h3>
-                            <h6>Building an efficient platform for largest collection of edgy, underground products from independent sellers on the internet.</h6>
-                            <h5><span>Client</span>In-House</h5>
-                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
-                            <a href="#" class="work_link" target="_blank">CHECK IT OUT</a>
-                        </div>
-                        <div class="work_visual-wrapper">
-                            <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
-                        </div>
+                    <div class="work_visual-wrapper">
+                        <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
                     </div>
-                    <div class="float_pad"></div>
-                </section>
-                <section class="work_section">
-                    <div class="content_section">
-                        <div class="work_snippet">
-                            <h3>Basco paints</h3>
-                            <h6>The first lifestyle based paint store with interactive product experiences and fully responsive e-commerce.</h6>
-                            <h5><span>Client</span>Basco paints </h5>
-                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
-                        </div>
-                        <div class="work_visual-wrapper">
-                            <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
-                        </div>
-                    </div>
-                    <div class="float_pad"></div>
-                </section>
-                <section class="work_section">
-                    <div class="content_section">
-                        <div class="work_snippet">
-                            <h3>Basco paints</h3>
-                            <h6>Creating a more personalized and customizable music app, redesigned from the ground up to fit how people consume music on mobile devices.</h6>
-                            <h5><span>Client</span>Coca Cola</h5>
-                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
-                        </div>
-                        <div class="work_visual-wrapper">
-                            <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
-                        </div>
-                    </div>
-                    <div class="float_pad"></div>
-                </section>
-                <section class="work_section">
-                    <div class="float_pad"></div>
-                </section>
+                </div>
             </section>
-            <ul class="slider-container" data-slider="cats">
-                <li>w</li>
-                <li>e</li>
-                <li>3</li>
-                <li>3</li>
-              </ul>
-              
-              <ul class="slider-container" data-slider="nature">
-                <li>3</li>
-                <li>2</li>
-                <li>3</li>
-                <li>5</li>
-              </ul>
-            <section class="panel_about" id="about_section">
-                <div class="content_section-wrapper">
-                    <div class="content_section">
-                        <div class="closing_stat">I have been working for the last 6 years in agencies, startups and as a freelancer. I've had the chance to work on a bunch of different websites, apps, and other screen based things. I try real hard to keep things simple and elegant. If you want to know more about my work, look at my stuff out there or talk to me.
+            <section class="work_section">
+                <div class="content_section">
+                    <div class="work_snippet">
+                        <h3>Basco paints</h3>
+                        <h6>The first lifestyle based paint store with interactive product experiences and fully responsive e-commerce.</h6>
+                        <h5><span>Client</span>Basco paints </h5>
+                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
+                    </div>
+                    <div class="work_visual-wrapper">
+                        <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="work_section">
+                <div class="content_section">
+                    <div class="work_snippet">
+                        <h3>Basco paints</h3>
+                        <h6>Creating a more personalized and customizable music app, redesigned from the ground up to fit how people consume music on mobile devices.</h6>
+                        <h5><span>Client</span>Coca Cola</h5>
+                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
+                    </div>
+                    <div class="work_visual-wrapper">
+                        <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="panel_about" id="about_section">
+            <div class="content_section-wrapper">
+                <div class="content_section">
+                    <div class="closing_stat">I have been working for the last 6 years in agencies, startups and as a freelancer. I've had the chance to work on a bunch of different websites, apps, and other screen based things. I try real hard to keep things simple and elegant. If you want to know more about my work, look at my stuff out there or talk to me.
 
-                            <br/>I offer graphic design, digital design, brand design, front–end development (HTML, CSS), WordPress Theme creation, photography, image retouching.</div>
-                    </div>
+                        <br/>I offer graphic design, digital design, brand design, front–end development (HTML, CSS), WordPress Theme creation, photography, image retouching.</div>
                 </div>
-                <a href="#work_section"class="menu_item menu_item-left menu_item-top menu_link"><span>Selected<br/>Work</span></a>
-                <a href="#home_section" class="menu_item menu_item-right menu_item-top menu_link"><span>Go Up</span></a>
-                <div class="float_pad"></div>
-            </section>
+            </div>
+            <a href="#work_section"class="menu_item menu_item-left menu_item-top menu_link"><span>Selected<br/>Work</span></a>
+            <a href="#home_section" class="menu_item menu_item-right menu_item-top menu_link"><span>Go Up</span></a>
+        </section>
+        <div>
+            <div id="slider"> 
+                <ul class="slides-wrapper">
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-6.jpg" alt="img1" />
+                    <h2>Slide #1</h2>
+                  </li>
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-5.jpg" alt="img1" />
+                    <h2>Slide #2</h2>
+                  </li>
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-7.jpg" alt="img1" />
+                    <h2>Slide #3</h2>
+                  </li>
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-8.jpg" alt="img1" />
+                    <h2>Slide #4</h2>
+                  </li>
+                </ul>
+                 <div class="slide-controls slide-left">&lt;</div>
+                 <div class="slide-controls slide-right">&gt;</div>
+              </div>
+              <div id="slider"> 
+                <ul class="slides-wrapper">
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-6.jpg" alt="img1" />
+                    <h2>Slide #1</h2>
+                  </li>
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-5.jpg" alt="img1" />
+                    <h2>Slide #2</h2>
+                  </li>
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-7.jpg" alt="img1" />
+                    <h2>Slide #3</h2>
+                  </li>
+                  <li>
+                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-8.jpg" alt="img1" />
+                    <h2>Slide #4</h2>
+                  </li>
+                </ul>
+                 <div class="slide-controls slide-left">&lt;</div>
+                 <div class="slide-controls slide-right">&gt;</div>
+              </div>
         </div>
         <script>
-        'use strict';
-
-var $win = $(window);
+        $(document).ready(function() {
   
-var // touch events
-    flickTimeout = 400,
-	  swipeThreshold = 10,
-    touchMoving = false,
-    
-    startX, startY, deltaX, deltaY, isFlick, swiping,
-
-    // transition end events
-    transition    = Modernizr.prefixed('transition'),
-    transitioning = false,
-    transitionend = {
-      'WebkitTransition': 'webkitTransitionEnd',
-      'MozTransition': 'transitionend',
-      'OTransition': 'oTransitionEnd otransitionend',
-      'msTransition': 'MSTransitionEnd',
-      'transition': 'transitionend'
-    }[transition],
-
-    // support for css transitions
-    support = Modernizr.csstransitions;
-
-var Slider = function(slider, options) {
-    
-    var self = this;
-    
-    ////////////////////////
-    // Let's Have Options
-    this.options = $.extend({
-        controlNav: true,
-        pagerNav: true,
-        endless: false,
-        speed: 300
-    }, options);
+  var slidesWrapperWidth, slideWidth, slideNumber, imgSrc, sliderInterval;
+  //animation controls
+  var pause = 4000;
+  var transition = 500;
   
-    ////////////////////////
-    // Set Up Properties
-    this._isSliding = false;
-    this._currIndex = 0;
-  
-    this._$slider = slider;
-    this.sliderId = slider.data('slider');
-    
-    this._$wrapper = $('<div class="slider-wrapper"/>');
-    this._$slider.wrap(this._$wrapper);
-  
-    this._$slides = this._$slider.children('li');
-    this._slideCount = this._$slides.length;
-    
-    // calc slider wrapper width
-    this._$slider.width(this._slideCount * 100 + '%');
-    // calc slide widths
-    this._$slides.width(100 / this._slideCount + "%");
-    
-    ////////////////////////
-    // Set Up Control Nav
-    if( this.options.controlNav ) {
-        this._$controlNav = $('<nav class="slider-nav"/>').insertAfter(this._$slider);
-        this._$prevSlide  = $('<span class="slide-prev">←</span>').appendTo(this._$controlNav);
-        this._$nextSlide  = $('<span class="slide-next">→</span>').appendTo(this._$controlNav);
-    }
-  
-    ////////////////////////
-    // Set Up Pager Nav
-    if( this.options.pagerNav ) {
-        this._$pagerNav = $('<nav class="slider-pager"/>').insertAfter(this._$slider);
-        
-        this._$slides.each(function(i) {
-            $('<a>' + (i+1) + '</a>').appendTo(self._$pagerNav)
-            .on('click', function(e) {
-                e.preventDefault();
-                self.captureMove(i);
-            });
-        });
-      
-        this._$pages = this._$pagerNav.children('a');
-        
-        // add initial active state
-        this._$pages.eq(0).addClass('active');
-
-        if( this.options.endless === false ) {
-            this._$prevSlide.addClass('disabled');
-        }
-    }
-    
-    ////////////////////////
-    // Call Init Methods
-    this.attachEvents();
-    
-    // arrange slides & apply proper classes
-    this.arrange(this._$slides.eq(0));
-};
-
-
-////////////////////////
-// Attach Events To Slider
-Slider.prototype.attachEvents = function() {
-    
-    var self = this;
-    
-    // move to prev slide
-    this._$prevSlide.on('click', function(e) {
-        e.preventDefault();
-        self.prev();
-    });
-    
-    // move to next slide
-    this._$nextSlide.on('click', function(e) {
-        e.preventDefault();
-        self.next();
-    });
-  
-    // keyboard functionality
-    $(document).on('keydown keyup', function(e) {
-      
-      // move to prev slide with left arrow
-      if(e.which === 37) {
-          e.preventDefault();
-          self.prev();
-      }
-      
-      // move to next slide with right arrow
-      if(e.which === 39) {
-          e.preventDefault();
-          self.next();
-      }
-    });
-    
-    // move to specific slide
-    $('[data-slide]').on('click', function() {
-        
-        var slider = $(this).data('slider-id'),
-            slide  = parseInt($(this).data('slide'));
-        
-        if( slider === self.sliderId ) {
-            self.captureMove(slide-1);
-        }
-    });
-};
-
-
-////////////////////////
-// Move To Previous Slide
-Slider.prototype.prev = function() {
-    this.captureMove(this._$slides.filter('.prev').index(), -1);
-};
-
-
-////////////////////////
-// Move To Next Slide
-Slider.prototype.next = function() {
-    this.captureMove(this._$slides.filter('.next').index(), 1);
-};
-
-
-////////////////////////
-// Capture Direction
-Slider.prototype.captureMove = function(index, direction) {
-    
-    var self = this;
-
-    // if not a number, on the same index or sliding then bail
-    if ( typeof index !== 'number' || index === this._currIndex || this._isSliding ) return;
-    
-    // if we don't want it to be endless and we are on the first or last slides then bail
-    if( this.options.endless === false ) {
-      
-        if( this._currIndex >= this._slideCount-1 && direction === 1 ) {
-            this._currIndex = this._slideCount-1;
-            return;
-        }
-
-        if( this._currIndex === 0 && direction === -1 ) {
-            this._currIndex = 0;
-            return;
-        }
-
-        if( this.options.controlNav ) {
-
-            var targetNav = index === 0 ? this._$prevSlide : this._$nextSlide;
-
-            // remove disabled class from previous controller
-            this._$prevSlide.add(this._$nextSlide).removeClass('disabled');
-
-            if( index === 0 || index >= this._slideCount-1 ) {
-                // add disabled class to previous controller
-                targetNav.addClass('disabled');
-            }
-        }
-    }
-      
-    // now we are sliding
-    this._isSliding = true;
-
-    var newIndex   = index % this._slideCount,
-        $currSlide = this._$slides.filter('.current');
-
-    // set current index
-    this._currIndex = $currSlide.index();
-
-    // if no direction specified grab the newIndex
-    if (!direction) {
-        this._$slides.eq(newIndex).addClass('target');
-    }
-    direction = direction || newIndex - this._currIndex;
-
-    // move slide to new index
-    this.slide(direction);
-
-    // after transition has completed do shiz
-    this._$slider.one(transitionend, function() {
-      
-        // arrange slides
-        self.arrange(self._$slides.eq(newIndex));
-
-        // stopped sliding
-        self._isSliding = false;
-
-        // check if we are moving to next or previous slide and mimic endless slide
-        if ( (direction === 1 && newIndex === 0) || (direction === -1 && newIndex === self._slideCount - 1) ) {
-            self.slide(0, true);
-        }
-    });
-
-    // update pagination with new index
-    this._$pages.length && this._$pages.removeClass('active').eq(newIndex).addClass('active');
-}
-
-
-////////////////////////
-// Perform The Slide
-Slider.prototype.slide = function(direction, instant) {
-    
-    var x = -(direction + this._currIndex) * 100,
-        s = instant ? 0 : this.options.speed;
-  
-    // if transforms & transitions are supported
-    if (!!transition && Modernizr.csstransforms3d) {
-      
-      this._$slider.css({
-        transform: 'translate3d(' + (x / this._slideCount).toFixed(2) + '%, 0, 0)',
-        transitionDuration: s + 'ms'
+  //turn img into repsonsive full-bg img
+  function makeBgImg() {
+     $(".slides-wrapper li").each(function (i) {
+       imgSrc = $(this).find('img').attr('src');
+       $(this).css({'background-image': 'url('+imgSrc+')'}); 
       });
-    }
-
-    // if transforms & transitions are not supported
-    else {
-
-      this._$slider.animate({
-        left: x + '%'
-      }, s, $.proxy(function() {
-        s && this._$slider.trigger(transitionend);
-      }, this));
-    }
-};
-
-
-////////////////////////
-// Arrange Slides
-Slider.prototype.arrange = function($currSlide) {
-    
-    var $prevSlide = $currSlide.prev().length ? $currSlide.prev() : this._$slides.last(),
-        $nextSlide = $currSlide.next().length ? $currSlide.next() : this._$slides.first(),
-        lastChild  = this.options.endless ? 'last-child' : '';
-    
-    // set new index
-    this._currIndex = $currSlide.index();
-
-    // remove all classes
-    this._$slides.removeClass('prev current next target last-child');
-
-    // add "prev" class
-    $prevSlide.addClass('prev')
-        // if we are on the last slide, add "last-child" class
-        .filter(':last-child').addClass(lastChild);
+  }//end makeBgImg
   
-    // add "current" class
-    $currSlide.addClass('current');
-
-    // add "next" class
-    $nextSlide.addClass('next');
-}
-
-
-////////////////////////
-// Init Sliders
-$('[data-slider]').each(function() {
-    new Slider($(this));
-});
+  makeBgImg();
+  
+  function refreshVars() {
+    slideNumber = $('.slides-wrapper li').length;
+    slideWidth = $('#slider').outerWidth();
+    slidesWrapperWidth = slideWidth * slideNumber;
+    
+    $('.slides-wrapper').css("width", slidesWrapperWidth+'px');
+    $('.slides-wrapper li').css('width', slideWidth+'px');
+    $('.slides-wrapper').css('left', - slideWidth);
+  }//end refreshVars
+  
+  refreshVars();
+  $(window).resize(refreshVars); 
+  
+  
+  $('.slider-wrapper li:last-child').prependTo('.slider-wrapper');
+  function ShowNextSlide() {
+       $('.slides-wrapper').animate({
+            marginLeft: - slideWidth
+        }, transition, function () {
+            $('.slides-wrapper li:first-child').appendTo('.slides-wrapper');
+            $('.slides-wrapper').css('marginLeft', '');
+        });//end animate
+  }//end show next slide
+ 
+    function ShowPrevSlide() {   
+           $('.slides-wrapper').animate({
+            marginLeft: + slideWidth
+        }, transition, function () {
+            $('.slides-wrapper li:last-child').prependTo('.slides-wrapper');           
+            $('.slides-wrapper').css('marginLeft', '');
+        });//end animate     
+    
+  }//end show prev slide
+  
+  $('.slide-right').on('click',ShowNextSlide);
+  $('.slide-left').on('click',ShowPrevSlide);
+  
+  //autoplay 
+}); //end ready
         </script>
     </div>
 </body>

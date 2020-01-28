@@ -114,27 +114,14 @@ h5{
 }
 .panel{
     &_home,&_about{
+        background-color: #f1f1f1;
         height: 100vh;
         position: relative;
     }
-    &_work,&_about{
-        &::after{
-            position: absolute;
-            content: "";
-            z-index:2;
-            height: 100%;
-            width: 1px;
-            background-color: $color_grey;
-            left: 4.4%;
-            top: 0;
-        }
-    }
     &_work{
-        padding-bottom: 120px;
         overflow: hidden;
     }
-    &_home,&_about{
-        background-color: #f1f1f1;
+    &_work,&_about{
         &::after,&::before{
             position: absolute;
             content: "";
@@ -151,18 +138,6 @@ h5{
             right: 4.4%;
         }
     }
-    &_about{
-        .float_pad{
-            top: 0;
-            height: 300px;
-        }
-    }
-}
-.float_pad{
-    background-color:$color_grey-light;
-    position: absolute;
-    right: 0;
-    width: 40%;
 }
 .scroll{
     &_section{
@@ -291,32 +266,14 @@ h5{
 }
 .work{
     &_section{
-        padding: 120px 0 30px;
+        padding-top: 120px;
+        padding-bottom: 30px;
         position: relative;
+        &:last-child{
+            padding-bottom:120px;
+        }
         .content_section{
             z-index: 20;
-        }
-        .float_pad{
-            bottom: 0;
-            height: 50%;
-            &::before,&::after{
-                position: absolute;
-                content: "";
-                top: 0;
-            }
-            &::after{
-                height: 100%;
-                width: 1px;
-                background-color: $color_grey;
-                right: 11%;
-                z-index:2;
-            }
-        }
-        &:last-child,&:nth-child(3),&:nth-child(4){
-            .float_pad{
-                bottom: 0;
-                height: 100%;
-            }
         }
         &-wrapper{
             position: relative;
@@ -371,6 +328,7 @@ h5{
         color: $primary_color;
         border-right: 4px solid darken($secondary_color, 20%);
         margin-right: 30px;
+        margin-bottom: 8px;
         &:hover{
             margin-top: 1px;
             &::after{
