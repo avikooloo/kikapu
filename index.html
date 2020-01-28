@@ -8,270 +8,114 @@
     <link href="favicon.ico" rel="shortcut icon" />
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <style>
-
-#slider {
-  margin: 50px auto;
-  width: 100%;
-  min-width: 320px;
-  max-width: 960px;
-  height: 500px;
-  background: black;
-  overflow: hidden;
-  position: relative;
-}
-.slides-wrapper {
-  height: 100%;
-  z-index: 1;
-  position: relative;
-}
-.slides-wrapper li {
-  position: relative;
-  float: left;
-  height: 100%;
-  background: no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  img {
-    display: none;
-  }
-  h2 {
-    color: #fff;
-    position: absolute;
-    font-family: "Droid Serif", serif;
-    font-style: italic;
-    font-size: 2em;
-    text-align: center;
-    width: 100%;
-    top: 45%;
-  }
-}
-
-.slide-controls {
-  position: absolute;
-  top: 45%;
-  z-index: 2;
-  font-size: 3em;
-  font-weight: bold;
-  background: #fff;
-  padding: 10px 5px;
-  opacity: 0.3;
-  &:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-}
-
-.slide-left {
-  left: 0;
-  border-radius: 0 5px 5px 0;
-}
-.slide-right {
-  right: 0;
-  border-radius: 5px 0 0 5px;
-}
-
-.info {
-  text-align: center;
-  color: #787878;
-  font-family: "Droid Serif", serif;
-  font-style: italic;
-  font-size: 0.7em;
-  line-height: 1.3;
-}
-
-    </style>
 </head>
 <body>
-    <div class="container">
-        <section class="panel_home" id="home_section">
-            <div class="content_section">
-                <div class="aviko_logo-wrapper">
-                    <a href="https://avikooloo.github.io/kikapu" class="aviko_logo" ><img src="victor_oloo.svg" alt="Victor Oloo"></a>
-                </div>
-                <h2>Am London based Product Designer. I’ve spent the last ten years turning ideas into meaningful experiences for startups to established</h2>
-            </div>
-            <div class="content_section-wrapper">
-            </div>
-            <div class="scroll_section">
-                <a href="#work_section" class="scroll_bar"><span>SCROLL<br/>DOWN</span></a>
-            </div>
-        </section>
-        <section id="work_section" class="work_section-wrapper panel_work">
-            <a href="#about_section" class="menu_item menu_item-left menu_item-bottom menu_link"><span>About</span></a>
-            <section class="work_section">
-                <div class="content_section">
-                    <div class="work_snippet">
-                        <h3>Ogilvy Africa</h3>
-                        <h6>“Making the simple complicated is commonplace; making the complicated simple, awesomely simple, that’s creativity.”</h6>
-                        <h5><span>Client</span>In-House</h5>
-                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
-                        <h5></h5>
-                        <a href="https://ogilvy.africa/" class="work_link" target="_blank">CHECK IT OUT</a>
-                    </div>
-                    <div class="work_visual-wrapper">
-                        <a href="https://ogilvy.africa/" class="work_visual" target="_blank"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></a>
-                    </div>
-                </div>
-            </section>
-            <section class="work_section">
-                <div class="content_section">
-                    <div class="work_snippet">
-                        <h3>Lorem ipsum</h3>
-                        <h6>Building an efficient platform for largest collection of edgy, underground products from independent sellers on the internet.</h6>
-                        <h5><span>Client</span>In-House</h5>
-                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
-                        <a href="#" class="work_link" target="_blank">CHECK IT OUT</a>
-                    </div>
-                    <div class="work_visual-wrapper">
-                        <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="work_section">
-                <div class="content_section">
-                    <div class="work_snippet">
-                        <h3>Basco paints</h3>
-                        <h6>The first lifestyle based paint store with interactive product experiences and fully responsive e-commerce.</h6>
-                        <h5><span>Client</span>Basco paints </h5>
-                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
-                    </div>
-                    <div class="work_visual-wrapper">
-                        <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
-                    </div>
-                </div>
-            </section>
-            <section class="work_section">
-                <div class="content_section">
-                    <div class="work_snippet">
-                        <h3>Basco paints</h3>
-                        <h6>Creating a more personalized and customizable music app, redesigned from the ground up to fit how people consume music on mobile devices.</h6>
-                        <h5><span>Client</span>Coca Cola</h5>
-                        <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
-                    </div>
-                    <div class="work_visual-wrapper">
-                        <div class="work_visual"><img src="ogilvy_visuals.jpg" alt="Ogilvy Website"></div>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <section class="panel_about" id="about_section">
-            <div class="content_section-wrapper">
-                <div class="content_section">
-                    <div class="closing_stat">I have been working for the last 6 years in agencies, startups and as a freelancer. I've had the chance to work on a bunch of different websites, apps, and other screen based things. I try real hard to keep things simple and elegant. If you want to know more about my work, look at my stuff out there or talk to me.
-
-                        <br/>I offer graphic design, digital design, brand design, front–end development (HTML, CSS), WordPress Theme creation, photography, image retouching.</div>
-                </div>
-            </div>
-            <a href="#work_section"class="menu_item menu_item-left menu_item-top menu_link"><span>Selected<br/>Work</span></a>
-            <a href="#home_section" class="menu_item menu_item-right menu_item-top menu_link"><span>Go Up</span></a>
-        </section>
-        <div>
-            <div id="slider"> 
-                <ul class="slides-wrapper">
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-6.jpg" alt="img1" />
-                    <h2>Slide #1</h2>
-                  </li>
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-5.jpg" alt="img1" />
-                    <h2>Slide #2</h2>
-                  </li>
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-7.jpg" alt="img1" />
-                    <h2>Slide #3</h2>
-                  </li>
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-8.jpg" alt="img1" />
-                    <h2>Slide #4</h2>
-                  </li>
+    <section class="intro_section panel_one" id="home_section">
+        <div class="panel_one-wrapper">
+            <div class="snippet_wrapper">
+                <ul class="intro_section-content">
+                    <li>
+                        <a href="https://avikooloo.github.io/kikapu" class="pod" ><img src="victor_oloo.svg" alt="Victor Oloo"></a>
+                    </li>
+                    <li>
+                        <h2>Digital designer and front-end developer focusing on interactive solitions and user experience.</h2>
+                    </li>
                 </ul>
-                 <div class="slide-controls slide-left">&lt;</div>
-                 <div class="slide-controls slide-right">&gt;</div>
-              </div>
-              <div id="slider"> 
-                <ul class="slides-wrapper">
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-6.jpg" alt="img1" />
-                    <h2>Slide #1</h2>
-                  </li>
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-5.jpg" alt="img1" />
-                    <h2>Slide #2</h2>
-                  </li>
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-7.jpg" alt="img1" />
-                    <h2>Slide #3</h2>
-                  </li>
-                  <li>
-                    <img src="https://docode.com.ua/wp-content/uploads/pictures/pic-8.jpg" alt="img1" />
-                    <h2>Slide #4</h2>
-                  </li>
-                </ul>
-                 <div class="slide-controls slide-left">&lt;</div>
-                 <div class="slide-controls slide-right">&gt;</div>
-              </div>
+            </div>
         </div>
-        <script>
-        $(document).ready(function() {
-  
-  var slidesWrapperWidth, slideWidth, slideNumber, imgSrc, sliderInterval;
-  //animation controls
-  var pause = 4000;
-  var transition = 500;
-  
-  //turn img into repsonsive full-bg img
-  function makeBgImg() {
-     $(".slides-wrapper li").each(function (i) {
-       imgSrc = $(this).find('img').attr('src');
-       $(this).css({'background-image': 'url('+imgSrc+')'}); 
-      });
-  }//end makeBgImg
-  
-  makeBgImg();
-  
-  function refreshVars() {
-    slideNumber = $('.slides-wrapper li').length;
-    slideWidth = $('#slider').outerWidth();
-    slidesWrapperWidth = slideWidth * slideNumber;
-    
-    $('.slides-wrapper').css("width", slidesWrapperWidth+'px');
-    $('.slides-wrapper li').css('width', slideWidth+'px');
-    $('.slides-wrapper').css('left', - slideWidth);
-  }//end refreshVars
-  
-  refreshVars();
-  $(window).resize(refreshVars); 
-  
-  
-  $('.slider-wrapper li:last-child').prependTo('.slider-wrapper');
-  function ShowNextSlide() {
-       $('.slides-wrapper').animate({
-            marginLeft: - slideWidth
-        }, transition, function () {
-            $('.slides-wrapper li:first-child').appendTo('.slides-wrapper');
-            $('.slides-wrapper').css('marginLeft', '');
-        });//end animate
-  }//end show next slide
- 
-    function ShowPrevSlide() {   
-           $('.slides-wrapper').animate({
-            marginLeft: + slideWidth
-        }, transition, function () {
-            $('.slides-wrapper li:last-child').prependTo('.slides-wrapper');           
-            $('.slides-wrapper').css('marginLeft', '');
-        });//end animate     
-    
-  }//end show prev slide
-  
-  $('.slide-right').on('click',ShowNextSlide);
-  $('.slide-left').on('click',ShowPrevSlide);
-  
-  //autoplay 
-}); //end ready
-        </script>
-    </div>
+        <div class="marker">
+            <div class="snippet_wrapper"><div class="marker-stroke"></div></div>
+        </div>
+        <div class="scroll_section">
+            <a href="#work_section" class="scroll_bar"><span>SCROLL<br/>DOWN</span></a>
+        </div>
+    </section>
+    <section class="work_section" id="work_section">
+        <a href="#about_section" class="menu_item menu_item-left menu_item-bottom menu_link"><span>About</span></a>
+        <div class="container">
+            <div class="work_section-title">Selected Work</div>
+            <div class="work_section-wrapper">
+                <ul class="work_section-panel">
+                    <li>
+                        <div class="work_section-snippet">
+                            <h3>Ogilvy Africa</h3>
+                            <h4>“Making the simple complicated is commonplace; making the complicated simple, awesomely simple, that’s creativity.”</h4>
+                            <h5><span>Client</span>In-House</h5>
+                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
+                            <h5></h5>
+                        <a href="https://ogilvy.africa/" class="work_link" target="_blank">CHECK IT OUT</a>
+                        </div>
+                    </li>
+                    <li><div class="work_visual"><img src="ogilvy_visuals-1.jpg" alt="Ogilvy Website"></div></li>
+                </ul>
+            </div>
+            <!--<div class="work_section-wrapper">
+                <ul class="work_section-panel">
+                    <li>
+                        <div class="work_section-snippet">
+                            <h3>Rebels Market</h3>
+                            <h4>Building an efficient platform for largest collection of edgy, underground products from independent sellers on the internet.</h4>
+                            <h5><span>Client</span>In-House</h5>
+                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design,<br/>Front-End Development.</h5>
+                            <a href="https://www.rebelsmarket.com/" class="work_link" target="_blank">CHECK IT OUT</a>
+                        </div>
+                    </li>
+                    <li><div class="work_visual"><img src="rebels_market-1.jpg" alt="Ogilvy Website"></div></li>
+                </ul>
+            </div>-->
+            <div class="work_section-wrapper">
+                <ul class="work_section-panel">
+                    <li>
+                        <div class="work_section-snippet">
+                            <h3>Basco paints</h3>
+                            <h4>The first lifestyle based paint store with interactive product experiences and fully responsive e-commerce.</h4>
+                            <h5><span>Client</span>Basco paints </h5>
+                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
+                        </div>
+                    </li>
+                    <li><div class="work_visual"><img src="basco_visual-1.jpg" alt="Ogilvy Website"></div></li>
+                </ul>
+            </div>
+            <div class="work_section-wrapper">
+                <ul class="work_section-panel">
+                    <li>
+                        <div class="work_section-snippet">
+                            <h3>Coke Studio</h3>
+                            <h4>Creating a more personalized and customizable music app, redesigned from the ground up to fit how people consume music on mobile devices.</h4>
+                            <h5><span>Client</span>Coca Cola</h5>
+                            <h5><span>Role</span>Art Direction,<br/>UX- and UI-Design.</h5>
+                        </div>
+                    </li>
+                    <li><div class="work_visual"><img src="coke_studio-1.jpg" alt="Ogilvy Website"></div></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="last_section panel_one" id="about_section">
+        <a href="#work_section"class="menu_item menu_item-left menu_item-top menu_link"><span>Selected<br/>Work</span></a>
+        <a href="#home_section" class="menu_item menu_item-right menu_item-top menu_link"><span>Go Up</span></a>
+        <div class="panel_one-wrapper">
+            <div class="snippet_wrapper">
+                <ul class="intro_section-content">
+                    <li>
+                        <h6>I am a versatile art director with over 7 years professional experience. My focus has been mainly in the area of digital/interactive media but I enjoy just about any type of design challenge. My work is focused on developing engaging & accessible UI experiences and digital marketing which combine my experiences of working with financial, eCommerce and telecommunication businesses. In addition to my design work, I am a competent front-end coder. I have hand coded countless sites (including this one)
+
+                        <br/><br/>Currently, I work for <a href="https://ogilvy.africa">Ogilvy</a> as a Art Director.</h6>
+                        <ol>
+                            <li><a href="https://www.linkedin.com/in/avikooloo/" target="_blank">Linkedin</a></li>
+                            <li><a href="https://dribbble.com/oloo" target="_blank">Dribbble</a></li>
+                            <li><a href="https://github.com/avikooloo" target="_blank">Github</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#top" class="pod" ><img src="peace.svg" alt="Victor Oloo"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="marker">
+            <div class="snippet_wrapper"><div class="marker-stroke"></div></div>
+        </div>
+    </section>
 </body>
 </html>
